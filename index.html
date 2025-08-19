@@ -415,9 +415,18 @@
         🎵
     </button>
     
-    <audio id="birthdayMusic" autoplay loop>
+    <audio id="birthdayMusic" autoplay muted controls>
         <source src="/sounds.mp3" type="audio/mpeg">
     </audio>
+
+    <script>
+  window.addEventListener("load", () => {
+    const audio = document.getElementById("player");
+    audio.muted = false;
+    audio.play().catch(err => console.log("Autoplay blocked:", err));
+  });
+</script>
+
 
     <!-- Main Container -->
     <div class="container">
