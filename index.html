@@ -410,33 +410,16 @@
     <!-- Particle System -->
     <div class="particles" id="particles"></div>
 
- <!-- Music Control -->
-<button class="music-control" id="musicBtn" onclick="toggleMusic()">
-    🎵
-</button>
-
-<audio id="birthdayMusic" loop>
-    <source src="/sounds.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  const audio = document.getElementById("birthdayMusic");
-
-  function toggleMusic() {
-    if (audio.paused) {
-      audio.play().catch(err => console.log("Play error:", err));
-    } else {
-      audio.pause();
-    }
-  }
-
-  window.addEventListener("load", () => {
-    audio.muted = true;
-    audio.play().catch(err => console.log("Autoplay blocked:", err));
-  });
-</script>
-
-
+    <!-- Music Control -->
+    <button class="music-control" id="musicBtn" onclick="toggleMusic()">
+        🎵
+    </button>
+    
+  <iframe width="0" height="0" 
+    src="https://www.youtube.com/embed/79EGoENWAns?autoplay=1&loop=1&playlist=79EGoENWAns" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media">
+</iframe>
 
     <!-- Main Container -->
     <div class="container">
