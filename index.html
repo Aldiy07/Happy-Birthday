@@ -410,22 +410,32 @@
     <!-- Particle System -->
     <div class="particles" id="particles"></div>
 
-    <!-- Music Control -->
-    <button class="music-control" id="musicBtn" onclick="toggleMusic()">
-        🎵
-    </button>
-    
-    <audio id="birthdayMusic" autoplay muted controls>
-        <source src="/sounds.mp3" type="audio/mpeg">
-    </audio>
+ <!-- Music Control -->
+<button class="music-control" id="musicBtn" onclick="toggleMusic()">
+    🎵
+</button>
 
-    <script>
+<audio id="birthdayMusic" loop>
+    <source src="/sounds.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio = document.getElementById("birthdayMusic");
+
+  function toggleMusic() {
+    if (audio.paused) {
+      audio.play().catch(err => console.log("Play error:", err));
+    } else {
+      audio.pause();
+    }
+  }
+
   window.addEventListener("load", () => {
-    const audio = document.getElementById("player");
-    audio.muted = false;
+    audio.muted = true;
     audio.play().catch(err => console.log("Autoplay blocked:", err));
   });
 </script>
+
 
 
     <!-- Main Container -->
